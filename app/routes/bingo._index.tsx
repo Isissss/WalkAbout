@@ -1,9 +1,9 @@
 import PageHeader from "~/components/pageHeader";
 
-export default function Rewards() {
+export default function Bingo() {
   return (
     <>
-      <PageHeader title="Beloningen" />
+      <PageHeader title="Bingo" />
       <section></section>
     </>
   );

@@ -1,7 +1,10 @@
-export default function RoutesIndex() {
+import PageHeader from "~/components/pageHeader";
+
+export default function Routes() {
   return (
     <>
-      <div className="h-full">Routes</div>
+      <PageHeader title="Wandelroutes" />
+      <section></section>
     </>
   );
 }

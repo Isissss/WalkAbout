@@ -1,7 +1,15 @@
 export const NAV_LINKS = [
     {
+        href: "/",
+        title: "Home"
+    },
+    {
         href: "/routes",
         title: "Wandelroutes"
+    },
+    {
+        href: "/bingo",
+        title: "Bingo"
     },
     {
         href: "/evenementen",
@@ -9,7 +17,7 @@ export const NAV_LINKS = [
     },
     {
         href: "/punten",
-        title: "Punten"
+        title: "Beloningen"
     }
 ]
 

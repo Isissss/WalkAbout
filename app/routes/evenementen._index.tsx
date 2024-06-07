@@ -1,3 +1,10 @@
-export default function Test() {
-  return <div>Evenementen</div>;
+import PageHeader from "~/components/pageHeader";
+
+export default function events() {
+  return (
+    <>
+      <PageHeader title="Evenementen" />
+      <section></section>
+    </>
+  );
 }

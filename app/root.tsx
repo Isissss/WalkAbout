@@ -6,14 +6,14 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import stylesheet from "~/tailwind.css?url";
-import Layout, { LayoutUI } from "./components/layout";
+import stylesheet from "./tailwind.css?url";
+import { LayoutUI } from "./components/layout";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout() {
   return (
     <html lang="en">
       <head>
