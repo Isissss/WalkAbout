@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <>
       <div className="hidden border-r bg-[#373776] sm:block">
-        <div className="flex h-full max-h-screen flex-col gap-2">
+        <div className="flex h-full flex-col gap-2">
           <div className="flex-1">
             <nav className="text-sm font-medium flex justify-between flex-col h-full">
               <div>
@@ -58,7 +58,7 @@ export default function Navbar() {
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="flex flex-col">
+            <SheetContent side="left" className="flex flex-col bg-[#373776] ">
               <nav className="grid gap-2 text-lg font-medium">
                 <Link
                   href="#"

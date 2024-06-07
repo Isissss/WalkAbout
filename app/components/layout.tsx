@@ -18,7 +18,7 @@ export function LayoutUI() {
   }, [font]);
 
   return (
-    <div className="grid min-h-screen w-full sm:custom-grid">
+    <div className="sm:grid h-full w-full sm:custom-grid min-h-screen">
       <Navbar />
       <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
         <Outlet />
