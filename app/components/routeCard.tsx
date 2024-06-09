@@ -1,14 +1,17 @@
 export type RouteCardProps = {
-  title: string;
-  distance: number;
-  location: string;
-  difficulty: number;
+  id: number;
+  created_at: string;
+  difficulty: number | null;
+  distance: number | null;
+  image: string | null;
+  name: string;
+  start_location: string;
 };
 
 export default function RouteCard({
-  title,
+  name,
   distance,
-  location,
+  start_location,
   difficulty,
 }: RouteCardProps) {
   return (
@@ -21,11 +24,11 @@ export default function RouteCard({
         />
       </div>
       <div className="col-span-3 p-5 flex flex-col space-y-3">
-        <h2 className="text-secondary text-3x col-span-3 text-3xl">{title}</h2>
+        <h2 className="text-secondary text-3x col-span-3 text-3xl">{name}</h2>
         <table className="w-full text-left">
           <tr>
             <th className="w-14 flex">Locatie:</th>
-            <td>{location || ""}</td>
+            <td>{start_location || ""}</td>
           </tr>
           <tr>
             <th className="w-14 flex">Afstand</th>
