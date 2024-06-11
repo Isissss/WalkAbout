@@ -8,7 +8,7 @@ import { BsPerson } from "react-icons/bs";
 export default function Navbar() {
   return (
     <>
-      <div className="hidden border-r bg-[#373776] sm:block">
+      <div className="hidden border-r bg-[#373776] sm:block sticky top-0 h-screen">
         <div className="flex h-full flex-col gap-2">
           <div className="flex-1">
             <nav className="text-sm font-medium flex justify-between flex-col h-full">
