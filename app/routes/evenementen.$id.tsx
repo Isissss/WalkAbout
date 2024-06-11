@@ -1,3 +1,3 @@
 export default function Test() {
-  return <div className="bg-red-300 h-3">Evenementen detail</div>;
+  return <div className='h-3 bg-red-300'>Evenementen detail</div>;
 }

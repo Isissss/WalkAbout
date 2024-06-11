@@ -1,9 +1,9 @@
-import PageHeader from "~/components/pageHeader";
+import PageHeader from '~/components/pageHeader';
 
 export default function Rewards() {
   return (
     <>
-      <PageHeader title="Beloningen" />
+      <PageHeader title='Beloningen' />
       <section></section>
     </>
   );

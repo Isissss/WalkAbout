@@ -1,9 +1,9 @@
-import PageHeader from "~/components/pageHeader";
+import PageHeader from '~/components/pageHeader';
 
 export default function Bingo() {
   return (
     <>
-      <PageHeader title="Bingo" />
+      <PageHeader title='Bingo' />
       <section></section>
     </>
   );

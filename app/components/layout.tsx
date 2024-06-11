@@ -1,7 +1,7 @@
-import { Outlet } from "@remix-run/react";
-import { useEffect, useLayoutEffect, useState } from "react";
-import { DEFAULT_FONT_SIZE } from "~/lib/const";
-import Navbar from "./navbar";
+import { Outlet } from '@remix-run/react';
+import { useEffect, useLayoutEffect, useState } from 'react';
+import { DEFAULT_FONT_SIZE } from '~/lib/const';
+import Navbar from './navbar';
 export function LayoutUI() {
   const [font, setFont] = useState(DEFAULT_FONT_SIZE);
 
@@ -13,14 +13,14 @@ export function LayoutUI() {
 
   // synchronize on change
   useEffect(() => {
-    document.documentElement.style.setProperty("--base-font-size", font);
-    window.localStorage.setItem("fontSize", font);
+    document.documentElement.style.setProperty('--base-font-size', font);
+    window.localStorage.setItem('fontSize', font);
   }, [font]);
 
   return (
-    <div className="sm:grid h-full w-full sm:custom-grid min-h-screen">
+    <div className='sm:custom-grid h-full min-h-screen w-full sm:grid'>
       <Navbar />
-      <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 container mx-auto">
+      <main className='container mx-auto flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6'>
         <Outlet />
       </main>
     </div>

@@ -1,7 +1,7 @@
-export default function PageHeader({ title = "" }: { title: string }) {
+export default function PageHeader({ title = '' }: { title: string }) {
   return (
-    <div className="rounded-3xl w-full items-center border-2 border-foreground">
-      <h1 className="font-bold text-primary text-6xl text-center py-6">
+    <div className='w-full items-center rounded-3xl border-2 border-foreground'>
+      <h1 className='py-6 text-center text-6xl font-bold text-primary'>
         {title}
       </h1>
     </div>

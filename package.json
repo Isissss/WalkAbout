@@ -1,14 +1,15 @@
 {
-  "name": "",
+  "name": "BingGO",
   "private": true,
   "sideEffects": false,
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
-    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "lint": "prettier . --write",
     "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
@@ -18,14 +19,28 @@
     "@remix-run/serve": "^2.9.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
     "isbot": "^4.1.0",
+    "lint-staged": "^15.2.5",
     "lucide-react": "^0.383.0",
     "pg": "^8.12.0",
+    "prettier-plugin-tailwindcss": "^0.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "CI=1 lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|mjs|ts|tsx|css|md|yml)": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@remix-run/dev": "^2.9.2",
@@ -41,6 +56,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.38",
+    "prettier": "3.3.2",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.1.6",
     "vite": "^5.1.0",
