@@ -4,6 +4,9 @@ export type HikingTrail = {
     difficulty: number | null;
     distance: number | null;
     image: string | null;
+    accessibility: string | null;
+    facilities: string | null;
+    description: string | null;
     name: string;
     start_location: string;
 };
