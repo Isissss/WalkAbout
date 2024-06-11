@@ -1,27 +1,14 @@
-import { useLoaderData, Link } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import { json, LoaderFunction } from "@remix-run/node";
-import client from "~/lib/postgres-client";
+import { HikingTrail } from "~/lib/types"; // Import the type definition
+import { fetchHikingTrails } from "~/lib/queries"; // Import the SQL query function
 import PageHeader from "~/components/pageHeader";
 import RouteCard from "~/components/routeCard";
 
-type HikingTrail = {
-  id: number;
-  created_at: string;
-  difficulty: number | null;
-  distance: number | null;
-  image: string | null;
-  name: string;
-  start_location: string;
-};
-
 export const loader: LoaderFunction = async () => {
   try {
-    // Select all columns from the hiking_trails table
-    const res = await client.query<HikingTrail>("SELECT * FROM hiking_trails");
-
-    const hikingTrails = res.rows;
+    const hikingTrails = await fetchHikingTrails();
     console.log("Fetched hiking trails:", hikingTrails);
-
     return json(hikingTrails);
   } catch (err) {
     console.error("Unexpected error:", err);
@@ -33,15 +20,15 @@ export default function Routes() {
   const trails = useLoaderData<HikingTrail[]>();
 
   return (
-    <>
-      <PageHeader title="Wandelroutes" />
-      <section>
-        <div className="flex flex-col items-center justify-center gap-y-4">
-          {trails.map((trail, index) => (
-            <RouteCard key={index} {...trail} />
-          ))}
-        </div>
-      </section>
-    </>
+      <>
+          <PageHeader title="Wandelroutes" />
+          <section>
+              <div className="flex flex-col items-center justify-center gap-y-4">
+                  {trails.map((trail, index) => (
+                      <RouteCard key={index} {...trail} />
+                  ))}
+              </div>
+          </section>
+      </>
   );
 }
