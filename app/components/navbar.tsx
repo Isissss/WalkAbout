@@ -18,10 +18,10 @@ export default function Navbar() {
                     key={link.href}
                     to={link.href}
                     className={(props) => {
-                      return `flex items-center gap-3 border-b-[#90B1B8] px-4 py-2 text-2xl [&:not(:last-child)]:border-b-2 ${
+                      return `flex items-center gap-3 border-b-[#90B1B8] px-4 py-2 text-2xl font-normal [&:not(:last-child)]:border-b-2 ${
                         props.isActive
-                          ? 'font-bold text-[#FF7729]'
-                          : 'font-normal text-background'
+                          ? 'bg-[#E76217] text-white'
+                          : 'text-background'
                       }`;
                     }}
                   >

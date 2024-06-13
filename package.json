@@ -9,7 +9,9 @@
     "lint": "prettier . --write",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
@@ -41,7 +43,7 @@
   },
   "lint-staged": {
     "*.+(js|mjs|ts|tsx|css|md|yml)": [
-      "prettier --write"
+      "prettier --write --ignore-path .gitignore ."
     ]
   },
   "devDependencies": {
