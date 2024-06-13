@@ -34,11 +34,11 @@ export default function RouteCard({
               <td>{start_location || ""}</td>
             </tr>
             <tr>
-              <th className="w-14 flex">Afstand</th>
+              <th className="w-14 flex">Afstand:</th>
               <td>{distance} kilometer</td>
             </tr>
             <tr>
-              <th className="w-14 flex">Moeilijkheid</th>
+              <th className="w-14 flex">Moeilijkheid:</th>
               <td>{difficulty}</td>
             </tr>
           </table>
