@@ -12,28 +12,47 @@ export default function Navbar() {
         <div className='flex h-full flex-col gap-2'>
           <div className='flex-1'>
             <nav className='flex h-full flex-col justify-between text-sm font-medium'>
-              <div>
-                {NAV_LINKS.map((link) => (
-                  <NavLink
-                    key={link.href}
-                    to={link.href}
-                    className={(props) => {
-                      return `flex items-center gap-3 border-b-[#90B1B8] px-4 py-2 text-2xl font-normal [&:not(:last-child)]:border-b-2 ${
-                        props.isActive
-                          ? 'bg-[#E76217] text-white'
-                          : 'text-background'
-                      }`;
-                    }}
-                  >
-                    {link.icon || ''}
-                    {link.title}
-                  </NavLink>
-                ))}
+              <div className='space-y-16'>
+                <Link
+                  to='/'
+                  className='flex items-center gap-3 border-b-[#90B1B8] px-4 py-2 text-2xl font-bold text-white [&:not(:last-child)]:border-b'
+                >
+                  <img
+                    src='/favicon.ico'
+                    alt=''
+                    className='aspect-square h-auto w-8'
+                  />
+                  Walkabout
+                </Link>
+                <div className='border-y border-y-[#90B1B8]'>
+                  {NAV_LINKS.map((link) => (
+                    <NavLink
+                      key={link.href}
+                      to={link.href}
+                      className={(props) => {
+                        return `flex items-center gap-3 border-b-[#90B1B8] px-4 py-2 text-2xl font-normal [&:not(:last-child)]:border-b ${
+                          props.isActive
+                            ? 'bg-[#E76217] text-white'
+                            : 'text-background'
+                        }`;
+                      }}
+                    >
+                      {link.iconImg && (
+                        <img
+                          src={'/icons' + link.iconImg}
+                          alt=''
+                          className='aspect-square h-auto w-8'
+                        />
+                      )}
+                      {link.title}
+                    </NavLink>
+                  ))}
+                </div>
               </div>
               <div>
                 <NavLink
                   to='/profiel'
-                  className='flex h-20 items-center gap-3 border-t-2 border-t-[#90B1B8] px-4 py-2 text-2xl font-normal text-background transition-all'
+                  className='flex h-20 items-center gap-3 border-t border-t-[#90B1B8] px-4 py-2 text-2xl font-normal text-background transition-all'
                 >
                   <BsPerson className='h-6 w-6' />
                   {/* TODO: when logged in show username */}
@@ -61,7 +80,7 @@ export default function Navbar() {
             <SheetContent side='left' className='flex flex-col bg-[#373776]'>
               <nav className='grid gap-2 text-lg font-medium'>
                 <Link
-                  href='#'
+                  to='#'
                   className='flex items-center gap-2 text-lg font-semibold'
                 >
                   <Package2 className='h-6 w-6' />

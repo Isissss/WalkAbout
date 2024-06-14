@@ -3,7 +3,7 @@ import PageHeader from '~/components/pageHeader';
 
 export const meta: MetaFunction = () => {
   return [
-    { title: 'New Remix App' },
+    { title: 'Walkabout' },
     { name: 'description', content: 'Welcome to Remix!' },
   ];
 };
@@ -11,11 +11,11 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <>
-      <PageHeader title='Welkom bij BingGO Walk!' />
+      <PageHeader title='Welkom bij WalkAbout!' />
       <section className='grid w-full grid-cols-2 gap-6'>
         <div className='mx-auto flex flex-col gap-y-7 sm:w-4/5'>
           <h2 className='mb-3 text-3xl font-bold text-secondary'>
-            Wat is BinGO Walk?
+            Wat is WalkAbout?
           </h2>
           <p className='text-xl'>
             BinGO Walk is een platform waarmee jij verschillende wandelroutes en

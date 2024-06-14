@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link } from '@remix-run/react';
 
 export type RouteCardProps = {
   id: number;
@@ -11,38 +11,41 @@ export type RouteCardProps = {
 };
 
 export default function RouteCard({
-                                    id,
-                                    name,
-                                    distance,
-                                    start_location,
-                                    difficulty,
-                                  }: RouteCardProps) {
+  id,
+  name,
+  distance,
+  start_location,
+  difficulty,
+}: RouteCardProps) {
   return (
-      <Link to={`/routes/${id}`} className="block rounded-3xl w-full border-2 border-foreground grid grid-cols-4 no-underline text-black">
-        <div className="col-span-1 overflow-hidden">
-          <img
-              src="/dummy.png"
-              alt=""
-              className="h-full w-full object-cover rounded-l-3xl"
-          />
-        </div>
-        <div className="col-span-3 p-5 flex flex-col space-y-3">
-          <h2 className="text-secondary text-3x col-span-3 text-3xl">{name}</h2>
-          <table className="w-full text-left">
-            <tr>
-              <th className="w-14 flex">Locatie:</th>
-              <td>{start_location || ""}</td>
-            </tr>
-            <tr>
-              <th className="w-14 flex">Afstand:</th>
-              <td>{distance} kilometer</td>
-            </tr>
-            <tr>
-              <th className="w-14 flex">Moeilijkheid:</th>
-              <td>{difficulty}</td>
-            </tr>
-          </table>
-        </div>
-      </Link>
+    <Link
+      to={`/routes/${id}`}
+      className='grid w-full max-w-4xl grid-cols-4 rounded-3xl border shadow-md shadow-gray-500 text-black no-underline'
+    >
+      <div className='col-span-1 overflow-hidden'>
+        <img
+          src='/dummy.png'
+          alt=''
+          className='h-full w-full rounded-l-3xl object-cover'
+        />
+      </div>
+      <div className='col-span-3 flex flex-col space-y-3 p-5'>
+        <h2 className='text-3x col-span-3 text-3xl text-secondary'>{name}</h2>
+        <table className='w-full text-left'>
+          <tr>
+            <th className='  '>Locatie:</th>
+            <td>{start_location || ''}</td>
+          </tr>
+          <tr>
+            <th className=' '>Afstand:</th>
+            <td>{distance} kilometer</td>
+          </tr>
+          <tr>
+            <th className='fl ex'>Moeilijkheid:</th>
+            <td>{difficulty}</td>
+          </tr>
+        </table>
+      </div>
+    </Link>
   );
 }
