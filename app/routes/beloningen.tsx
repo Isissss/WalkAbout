@@ -41,10 +41,6 @@ const VOUCHERS = [
   },
 ];
 
-export const meta: MetaFunction = () => {
-  return [{ title: 'Walkabout' }];
-};
-
 export default function Rewards() {
   return (
     <>

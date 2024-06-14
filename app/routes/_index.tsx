@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <>
       <PageHeader title='Welkom bij WalkAbout!' />
-      <section className='grid w-full grid-cols-2 gap-6'>
+      <section className='grid w-full gap-6 lg:grid-cols-2'>
         <div className='mx-auto flex flex-col gap-y-7 sm:w-4/5'>
           <h2 className='mb-3 text-3xl font-bold text-secondary'>
             Wat is WalkAbout?
@@ -33,7 +33,7 @@ export default function Index() {
             beloningen.
           </p>
         </div>
-        <div>
+        <div className='mx-auto'>
           <img
             src='/intro.png'
             className='aspect-square overflow-hidden rounded-xl object-cover'

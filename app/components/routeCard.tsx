@@ -18,34 +18,38 @@ export default function RouteCard({
   difficulty,
 }: RouteCardProps) {
   return (
-    <Link
-      to={`/routes/${id}`}
-      className='grid w-full max-w-4xl grid-cols-4 rounded-3xl border shadow-md shadow-gray-500 text-black no-underline'
-    >
-      <div className='col-span-1 overflow-hidden'>
+    <div className='relative grid w-full max-w-4xl rounded-3xl border text-black no-underline shadow-md shadow-gray-500 lg:grid-cols-4'>
+      <div className='overflow-hidden lg:col-span-1'>
         <img
           src='/dummy.png'
           alt=''
-          className='h-full w-full rounded-l-3xl object-cover'
+          className='h-32 w-full rounded-t-3xl object-cover lg:h-full lg:rounded-l-3xl'
         />
       </div>
-      <div className='col-span-3 flex flex-col space-y-3 p-5'>
-        <h2 className='text-3x col-span-3 text-3xl text-secondary'>{name}</h2>
-        <table className='w-full text-left'>
-          <tr>
-            <th className='  '>Locatie:</th>
-            <td>{start_location || ''}</td>
-          </tr>
-          <tr>
-            <th className=' '>Afstand:</th>
-            <td>{distance} kilometer</td>
-          </tr>
-          <tr>
-            <th className='fl ex'>Moeilijkheid:</th>
-            <td>{difficulty}</td>
-          </tr>
+      <div className='flex flex-col items-start space-y-3 p-5 lg:col-span-3'>
+        <Link
+          className='after:absolute after:inset-0 after:h-full after:w-full'
+          to={`/routes/${id}`}
+        >
+          <h2 className='text-3x col-span-3 text-3xl text-secondary'>{name}</h2>{' '}
+        </Link>
+        <table className='text-left'>
+          <tbody>
+            <tr>
+              <th className='w-32'>Locatie:</th>
+              <td>{start_location || ''}</td>
+            </tr>
+            <tr>
+              <th>Afstand:</th>
+              <td>{distance} kilometer</td>
+            </tr>
+            <tr>
+              <th>Moeilijkheid:</th>
+              <td>{difficulty}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
-    </Link>
+    </div>
   );
 }
