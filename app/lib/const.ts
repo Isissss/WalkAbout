@@ -22,7 +22,7 @@ export const NAV_LINKS = [
   {
     href: '/prestaties',
     title: 'Prestaties',
-    iconImg: '/beloningen_wit.png'
+    iconImg: '/badges_wit.png'
   },
 ];
 
