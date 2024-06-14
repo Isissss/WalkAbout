@@ -2,22 +2,27 @@ export const NAV_LINKS = [
   {
     href: '/',
     title: 'Home',
+    iconImg: '/home_wit.png'
   },
   {
     href: '/routes',
     title: 'Wandelroutes',
-  },
-  {
-    href: '/bingo',
-    title: 'Bingo',
+    iconImg: '/wandelroutes_wit.png'
   },
   {
     href: '/evenementen',
     title: 'Evenementen',
+    iconImg: '/evenementen_wit.png'
   },
   {
-    href: '/punten',
+    href: '/beloningen',
     title: 'Beloningen',
+    iconImg: '/beloningen_wit.png'
+  },
+  {
+    href: '/prestaties',
+    title: 'Prestaties',
+    iconImg: '/beloningen_wit.png'
   },
 ];
 
