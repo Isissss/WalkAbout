@@ -64,10 +64,10 @@ export default function EventDetail() {
                     <h1 className='py-6 text-4xl font-bold text-primary'>Facaliteiten</h1>
                     <ul className="list-disc list-inside">
                         <li key={1} className="py-2">Parkeerplaats bij de Brasserie</li>
-                        <li key={1} className="py-2">Toilet faciliteiten tijdens de pauze</li>
-                        <li key={1} className="py-2">Kunstwerken (standbeelden)</li>
-                        <li key={1} className="py-2">Picknick plaatsen</li>
-                        <li key={1} className="py-2">Bankjes om te zitten</li>
+                        <li key={2} className="py-2">Toilet faciliteiten tijdens de pauze</li>
+                        <li key={3} className="py-2">Kunstwerken (standbeelden)</li>
+                        <li key={4} className="py-2">Picknick plaatsen</li>
+                        <li key={5} className="py-2">Bankjes om te zitten</li>
                     </ul>
                 </div>
             </section>
