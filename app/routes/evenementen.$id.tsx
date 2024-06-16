@@ -31,7 +31,7 @@ export default function EventDetail() {
                         <p>{event.description}</p>
                         <button
                             type="submit"
-                            className="w-1/5 mt-4 bg-indigo-500 text-white py-2 px-4 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="w-1/5 mt-4 bg-[#656ADD] text-white py-2 px-4 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             Meld mij aan
                         </button>

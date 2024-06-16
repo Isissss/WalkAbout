@@ -55,7 +55,7 @@ export default function events() {
                         >
                             <div className='flex items-center'>
                                 <div
-                                    className='flex flex-col items-center justify-center p-5 lg:col-span-3 bg-purple-500 text-white h-full'
+                                    className='flex flex-col items-center justify-center p-5 lg:col-span-3 bg-[#656ADD] text-white h-full'
                                     style={{ minWidth: '120px' }} // Set a fixed or minimum width
                                 >
                                     <div className='text-6xl'>
@@ -92,7 +92,7 @@ export default function events() {
                                     className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
                             </div>
                         </div>
-                        <div className="absolute right-0 bottom-0 bg-purple-500 px-6 py-1 text-white rounded-tl-2xl">
+                        <div className="absolute right-0 bottom-0 bg-[#656ADD] px-6 py-1 text-white rounded-tl-2xl">
                             {'Meld je nu aan ->'}
                         </div>
                     </Link>

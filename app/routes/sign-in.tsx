@@ -51,7 +51,7 @@ const SignIn = () => {
                         <div>
                             <button
                                 type="submit"
-                                className="w-full bg-[#E76217] text-white py-2 px-4 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                className="w-full bg-[#656ADD] text-white py-2 px-4 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
                                 Inloggen
                             </button>
