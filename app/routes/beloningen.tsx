@@ -46,7 +46,7 @@ export default function Rewards() {
     <>
       <PageHeader title='Beloningen' />
       <section className='mx-auto max-w-4xl'>
-        <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+        <div className='grid gap-6 sm:grid-cols-1 md:grid-cols-2'>
           {VOUCHERS?.map((voucher, index) => (
             <RewardCard
               key={index}

@@ -63,7 +63,7 @@ export default function Rewards() {
                         className='flex flex-col justify-center whitespace-nowrap bg-orange-500 text-center text-white shadow-none'
                       ></div>
                     </div>
-                    <span className='inline-block rounded-full bg-orange-200 px-2 py-1 text-xs font-semibold uppercase text-orange-600'>
+                    <span className='inline-block rounded-full bg-secondary px-2 py-1 text-xs font-semibold uppercase text-white'>
                       {achievement.progress}%
                     </span>
                   </div>
