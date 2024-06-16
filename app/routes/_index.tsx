@@ -18,7 +18,7 @@ export default function Index() {
             Wat is WalkAbout?
           </h2>
           <p className='text-xl'>
-            BinGO Walk is een platform waarmee jij verschillende wandelroutes en
+            WalkAbout is een platform waarmee jij verschillende wandelroutes en
             ook diverse sociale activiteiten (evenementen) kan vinden die te
             maken hebben met beweging.
           </p>
@@ -37,7 +37,7 @@ export default function Index() {
           <img
             src='/intro.png'
             className='aspect-square overflow-hidden rounded-xl object-cover'
-            alt='BinGO Walk'
+            alt=''
           />
         </div>
       </section>

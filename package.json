@@ -1,6 +1,5 @@
 {
-  "name": "BingGO",
-  "homepage": "http://isissss.github.io/walkabout",
+  "name": "WalkAbout",
   "private": true,
   "sideEffects": false,
   "type": "module",
