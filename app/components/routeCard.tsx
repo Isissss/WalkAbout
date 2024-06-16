@@ -23,7 +23,7 @@ export default function RouteCard({
         <img
           src='/dummy.png'
           alt=''
-          className='h-full w-full rounded-t-3xl object-cover lg:rounded-l-3xl'
+          className='h-32 w-full rounded-t-3xl object-cover lg:h-full lg:rounded-l-3xl'
         />
       </div>
       <div className='flex flex-col items-start space-y-3 p-5 lg:col-span-3'>

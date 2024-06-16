@@ -52,7 +52,13 @@ export default function Navbar() {
               <div>
                 <NavLink
                   to='/profiel'
-                  className='flex h-20 items-center gap-3 border-t border-t-[#90B1B8] px-4 py-2 text-2xl font-normal text-background transition-all'
+                  className={(props) => {
+                    return `transition-all' flex h-20 items-center gap-3 border-t border-t-[#90B1B8] px-4 py-2 text-2xl font-normal text-background ${
+                      props.isActive
+                        ? 'bg-[#E76217] text-white'
+                        : 'text-background'
+                    }`;
+                  }}
                 >
                   <BsPerson className='h-6 w-6' />
                   {/* TODO: when logged in show username */}
