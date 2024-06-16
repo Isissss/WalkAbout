@@ -25,9 +25,9 @@ export default function RouteDetail() {
       <>
         <PageHeader title="Routeinformatie" />
         <section>
-          <div className="flex gap-y-4 justify-between">
+          <div className="flex gap-y-4 max-lg:block justify-between">
             <div>
-              <h1 className='py-6 text-4xl font-bold text-primary'>Overzicht</h1>
+              <h1 className='py-6 text-4xl font-bold max-md:text-lg text-primary'>Overzicht</h1>
               <div className="flex gap-x-3">
                 <div className="flex flex-col">
                   <p className="font-bold text-primary">Route naam:</p>
@@ -36,7 +36,7 @@ export default function RouteDetail() {
                   <p className="font-bold text-primary">Duur:</p>
                   <p className="font-bold text-primary">Moeilijkheid:</p>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col max-lg:pb-6">
                   <p className="">{trail.name}</p>
                   <p className="">{trail.start_location}</p>
                   <p className="">{trail.distance} kilometer</p>
@@ -52,11 +52,11 @@ export default function RouteDetail() {
             />
           </div>
           <div>
-            <h1 className='py-6 text-4xl font-bold text-primary'>Beschrijving</h1>
+            <h1 className='py-6 text-4xl font-bold max-md:text-lg text-primary'>Beschrijving</h1>
             <p className="">{trail.description}</p>
           </div>
           <div>
-            <h1 className='py-6 text-4xl font-bold text-primary'>Facaliteiten</h1>
+            <h1 className='py-6 text-4xl font-bold max-md:text-lg text-primary'>Facaliteiten</h1>
             <ul className="list-disc list-inside">
               {trail.facilities.split(',').map((facility, index) => (
                   <li key={index} className="py-2">{facility.trim()}</li>
@@ -64,7 +64,7 @@ export default function RouteDetail() {
             </ul>
           </div>
           <div>
-            <h1 className='py-6 text-4xl font-bold text-primary'>Bereikbaarheid</h1>
+            <h1 className='py-6 text-4xl font-bold max-md:text-lg text-primary'>Bereikbaarheid</h1>
             <p className="">{trail.accessibility}</p>
           </div>
         </section>

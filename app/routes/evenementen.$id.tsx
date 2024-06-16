@@ -25,23 +25,23 @@ export default function EventDetail() {
         <>
             <PageHeader title="Evenement informatie"/>
             <section>
-                <div className="flex gap-y-4 justify-between">
+                <div className="flex max-lg:block gap-4 justify-between">
                     <div>
-                        <h1 className='py-6 text-4xl font-bold text-primary'>{event.name}</h1>
+                        <h2 className='py-6 text-4xl max-md:text-lg font-bold text-primary'>{event.name}</h2>
                         <p>{event.description}</p>
                         <button
                             type="submit"
-                            className="w-1/5 mt-4 bg-[#656ADD] text-white py-2 px-4 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="w-52 mt-4 bg-[#656ADD] text-white py-2 px-4 rounded-xl shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             Meld mij aan
                         </button>
-                        <h1 className='py-6 text-4xl font-bold text-primary'>Locatie</h1>
+                        <h2 className='py-6 text-4xl font-bold max-md:text-lg text-primary'>Locatie</h2>
                         <div className="flex gap-x-3">
                             <div className="flex flex-col">
                                 <p className="font-bold text-primary">Startpunt:</p>
                                 <p className="font-bold text-primary">Eindpunt:</p>
                             </div>
-                            <div className="flex flex-col">
+                            <div className="flex flex-col max-lg:pb-6">
                                 <p className="">{event.start_location}</p>
                                 <p className="">{event.start_location}</p>
                             </div>
@@ -54,14 +54,14 @@ export default function EventDetail() {
                     />
                 </div>
                 <div>
-                    <h1 className='py-6 text-4xl font-bold text-primary'>Beschrijving</h1>
+                    <h2 className='py-6 text-4xl font-bold max-md:text-lg text-primary'>Beschrijving</h2>
                     <p className="">De wandeling zal in totaal 1.5 kilometer zijn over één uur, met een pauze halverwege
                         de wandeling inbegrepen. Het Rotterdamse Zuiderpark is een rustgevende en groene omgeving. De
                         paden waar we op wandelen zijn plat en vriendelijk voor wandelstokken en andere
                         loophulpmiddelen.</p>
                 </div>
                 <div>
-                    <h1 className='py-6 text-4xl font-bold text-primary'>Facaliteiten</h1>
+                    <h2 className='py-6 text-4xl font-bold max-md:text-lg text-primary'>Facaliteiten</h2>
                     <ul className="list-disc list-inside">
                         <li key={1} className="py-2">Parkeerplaats bij de Brasserie</li>
                         <li key={2} className="py-2">Toilet faciliteiten tijdens de pauze</li>

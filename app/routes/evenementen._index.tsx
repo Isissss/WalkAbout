@@ -58,23 +58,23 @@ export default function events() {
                                     className='flex flex-col items-center justify-center p-5 lg:col-span-3 bg-[#656ADD] text-white h-full'
                                     style={{ minWidth: '120px' }} // Set a fixed or minimum width
                                 >
-                                    <div className='text-6xl'>
+                                    <div className='text-6xl max-md:text-4xl'>
                                         {day}
                                     </div>
-                                    <div className='text-xl'>
+                                    <div className='text-xl max-md:text-lg'>
                                         {month}
                                     </div>
                                 </div>
-                            <div className='flex flex-col items-start space-y-3 p-5 lg:col-span-3'>
-                                <p className="font-bold text-lg">{event.name}</p>
-                                <table className='text-left text-lg'>
+                            <div className='flex flex-col items-start space-y-3 p-5 lg:col-span-3 max-md:pb-8'>
+                                <p className="font-bold text-lg max-md:text-sm">{event.name}</p>
+                                <table className='text-left text-lg max-md:text-sm'>
                                     <tbody>
                                     <tr>
-                                        <th className='w-24'>Dag:</th>
+                                        <th>Dag:</th>
                                         <td>{weekday}</td>
                                     </tr>
                                     <tr>
-                                        <th>Locatie:</th>
+                                    <th>Locatie:</th>
                                         <td>{event.start_location}</td>
                                     </tr>
                                     <tr>
@@ -85,7 +85,7 @@ export default function events() {
                                 </table>
                             </div>
                         </div>
-                        <div className='overflow-hidden lg:col-span-1 w-auto h-full max-w-xs'>
+                        <div className='max-md:hidden overflow-hidden lg:col-span-1 w-auto h-full max-w-xs'>
                             <div className="relative inline-block w-auto h-full">
                                 <img src='/group-activity.jpg' alt='' className="block w-auto h-full"/>
                                 <div

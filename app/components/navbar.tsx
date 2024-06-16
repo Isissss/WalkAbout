@@ -86,22 +86,39 @@ export default function Navbar() {
             <SheetContent side='left' className='flex flex-col bg-[#373776]'>
               <nav className='grid gap-2 text-lg font-medium'>
                 <Link
-                  to='#'
-                  className='flex items-center gap-2 text-lg font-semibold'
+                    to='/'
+                    className='flex items-center gap-2 text-lg font-semibold'
                 >
-                  <Package2 className='h-6 w-6' />
-                  <span className='sr-only'>Acme Inc</span>
+                  <img
+                      src='/favicon.ico'
+                      alt=''
+                      className='aspect-square h-auto w-8'
+                  />
                 </Link>
                 {NAV_LINKS.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className='flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary'
+                    <Link
+                        key={link.href}
+                        to={link.href}
+                        className='flex items-center text-white gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary'
                   >
-                    {link.icon || ''}
+                      {link.iconImg && (
+                          <img
+                              src={'/icons' + link.iconImg}
+                              alt=''
+                              className='aspect-square h-auto w-8'
+                          />
+                      )}
                     {link.title}
                   </Link>
                 ))}
+                <Link
+                    key='/profiel'
+                    to='/profiel'
+                    className='flex items-center text-white gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary'
+                >
+                  <BsPerson className='h-auto w-8' />
+                  Profiel
+                </Link>
               </nav>
             </SheetContent>
           </Sheet>
