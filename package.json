@@ -44,7 +44,7 @@
     "hooks": {
       "pre-commit": "prettier --write --ignore-path .gitignore . && git add -A ."
     }
-  }, 
+  },
   "devDependencies": {
     "@remix-run/dev": "^2.9.2",
     "@types/react": "^18.2.20",
