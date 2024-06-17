@@ -42,7 +42,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "prettier --write --ignore-path .gitignore . && git add -A ."
+  "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
+    "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
+    "post-applypatch": "echo \"[Husky] post-applypatch\"",
+    "pre-commit": "echo \"[Husky] pre-commit\"" 
     }
   },
   "devDependencies": {
