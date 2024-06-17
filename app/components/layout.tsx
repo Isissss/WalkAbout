@@ -1,7 +1,6 @@
-import { Outlet } from '@remix-run/react'; 
+import { Outlet } from '@remix-run/react';
 import Navbar from './navbar';
-export function LayoutUI() {  
-
+export function LayoutUI() {
   return (
     <div className='sm:custom-grid h-full min-h-screen w-full sm:grid'>
       <Navbar />

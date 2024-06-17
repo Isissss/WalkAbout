@@ -49,45 +49,47 @@ export const TRANSPORT_METHODS = [
   },
 ];
 
-export const   VOUCHERS = [
+export const VOUCHERS = [
   {
     id: 1,
     image: '/coffee.png',
     vendors: ['HEMA restaurant', 'CoffeeCompany', 'Anne&Max', 'Barista Café'],
-    description: 'Met deze voucher kan 50% korting krijgen op een cappucino, koffie of een kop thee. Deze voucher is eenmalig te gebruiken.',
+    description:
+      'Met deze voucher kan 50% korting krijgen op een cappucino, koffie of een kop thee. Deze voucher is eenmalig te gebruiken.',
     title: '50% korting warme drank\n(Koffie, thee)',
     points: 10,
-    hotspot: 'top'
+    hotspot: 'top',
   },
   {
     id: 2,
     image: '/cake.png',
     vendors: ['HEMA restaurant', 'Bakker Bart', 'La Place', 'Dudok'],
-    description: 'Met deze voucher kan je 1+1 gratis stuk gebak krijgen. Deze voucher is eenmalig te gebruiken.',
+    description:
+      'Met deze voucher kan je 1+1 gratis stuk gebak krijgen. Deze voucher is eenmalig te gebruiken.',
     title: '1+1 gratis stuk gebak',
     points: 25,
-    hotspot: 'center'
+    hotspot: 'center',
   },
   {
     id: 3,
     image: '/sportles.png',
     vendors: ['Basic-Fit', 'Fit For Free', 'Anytime Fitness', 'David Lloyd'],
-    description: 'Met deze voucher kan je 30% korting krijgen op een sportles naar keuze. Deze voucher is eenmalig te gebruiken.',
+    description:
+      'Met deze voucher kan je 30% korting krijgen op een sportles naar keuze. Deze voucher is eenmalig te gebruiken.',
     title: '30% korting sportles',
     points: 40,
-    hotspot: 'center'
+    hotspot: 'center',
   },
   {
     id: 4,
     image: '/coffee.png',
-    description: 'Met deze voucher kan 50% korting krijgen op een cappucino, koffie of een kop thee. Deze voucher is eenmalig te gebruiken.',
+    description:
+      'Met deze voucher kan 50% korting krijgen op een cappucino, koffie of een kop thee. Deze voucher is eenmalig te gebruiken.',
     vendors: ['HEMA restaurant', 'CoffeeCompany', 'Anne&Max', 'Barista Café'],
     title: '50% korting warme drank\n(Koffie, thee)',
-    points: 10, 
-    hotspot: 'top'
-  }
+    points: 10,
+    hotspot: 'top',
+  },
 ];
 
 export const DEFAULT_FONT_SIZE = '16px';
-
- 

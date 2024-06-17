@@ -22,7 +22,7 @@ export const meta: MetaFunction = () => {
 
 export function Layout() {
   return (
-    <html lang='en' style={{ scrollbarGutter: 'stable' }}> 
+    <html lang='en' style={{ scrollbarGutter: 'stable' }}>
       <head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -36,7 +36,7 @@ export function Layout() {
       </body>
     </html>
   );
-}  
+}
 
 export default function App() {
   return <Outlet />;

@@ -1,8 +1,6 @@
-import {  useNavigate } from '@remix-run/react'; 
-import PageHeader from '~/components/pageHeader'; 
+import { useNavigate } from '@remix-run/react';
+import PageHeader from '~/components/pageHeader';
 import { TRANSPORT_METHODS } from '~/lib/const';
-
-
 
 export default function Routes() {
   const navigate = useNavigate();

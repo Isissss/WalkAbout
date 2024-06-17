@@ -1,4 +1,4 @@
-import { useLoaderData  } from '@remix-run/react';
+import { useLoaderData } from '@remix-run/react';
 import { json, LoaderFunction } from '@remix-run/node';
 import { HikingTrail } from '~/lib/types'; // Import the type definition
 import { fetchHikingTrails } from '~/lib/queries'; // Import the SQL query function
@@ -25,7 +25,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     console.error('Unexpected error:', err);
     throw new Response('Failed to load hiking trails', { status: 500 });
   }
-}; 
+};
 
 export default function Routes() {
   const hikingTrails = useLoaderData<typeof loader>();
@@ -50,25 +50,25 @@ export default function Routes() {
     <>
       <PageHeader title='Wandelroutes' />
       <section>
-        {transportMethod && isPickingTransportMethod  ? (
+        {transportMethod && isPickingTransportMethod ? (
           <TransportModal
             transportMethods={TRANSPORT_METHODS}
             setTransportMethod={setTransportMethod}
             setIsPickingTransportMethod={setIsPickingTransportMethod}
           />
-        ) : ( 
-        <>
-          <p className='mb-2 text-center text-2xl'>
-            Routes geschikt voor {transportMethod}
-          </p>
-          <div className='flex flex-col items-center justify-center gap-y-4'>
-            {hikingTrails?.map((trail: HikingTrail, index: number) => (
-              <RouteCard key={index} {...trail} />
-            ))}
-          </div>
-        </>)}
+        ) : (
+          <>
+            <p className='mb-2 text-center text-2xl'>
+              Routes geschikt voor {transportMethod}
+            </p>
+            <div className='flex flex-col items-center justify-center gap-y-4'>
+              {hikingTrails?.map((trail: HikingTrail, index: number) => (
+                <RouteCard key={index} {...trail} />
+              ))}
+            </div>
+          </>
+        )}
       </section>
-    
     </>
   );
 }

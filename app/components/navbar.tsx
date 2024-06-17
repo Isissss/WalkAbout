@@ -51,12 +51,14 @@ export default function Navbar() {
               </div>
               <div>
                 <NavLink
-                  to='/profiel' 
-                  className={({ isActive }) => `transition-all' flex h-20 items-center gap-3 border-t border-t-[#90B1B8] px-4 py-2 text-2xl font-normal text-background ${ 
+                  to='/profiel'
+                  className={({ isActive }) =>
+                    `transition-all' flex h-20 items-center gap-3 border-t border-t-[#90B1B8] px-4 py-2 text-2xl font-normal text-background ${
                       isActive
-                      ? 'bg-[#E76217] text-white'
-                      : 'text-background hover:bg-[#29295a]'
-                  }`}
+                        ? 'bg-[#E76217] text-white'
+                        : 'text-background hover:bg-[#29295a]'
+                    }`
+                  }
                 >
                   <BsPerson className='h-6 w-6' />
                   {/* TODO: when logged in show username */}
@@ -84,35 +86,35 @@ export default function Navbar() {
             <SheetContent side='left' className='flex flex-col bg-[#373776]'>
               <nav className='grid gap-2 text-lg font-medium'>
                 <Link
-                    to='/'
-                    className='flex items-center gap-2 text-lg font-semibold'
+                  to='/'
+                  className='flex items-center gap-2 text-lg font-semibold'
                 >
                   <img
-                      src='/favicon.ico'
-                      alt=''
-                      className='aspect-square h-auto w-8'
+                    src='/favicon.ico'
+                    alt=''
+                    className='aspect-square h-auto w-8'
                   />
                 </Link>
                 {NAV_LINKS.map((link) => (
-                    <Link
-                        key={link.href}
-                        to={link.href}
-                        className='flex items-center text-white gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary'
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className='flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground text-white transition-all hover:text-primary'
                   >
-                      {link.iconImg && (
-                          <img
-                              src={'/icons' + link.iconImg}
-                              alt=''
-                              className='aspect-square h-auto w-8'
-                          />
-                      )}
+                    {link.iconImg && (
+                      <img
+                        src={'/icons' + link.iconImg}
+                        alt=''
+                        className='aspect-square h-auto w-8'
+                      />
+                    )}
                     {link.title}
                   </Link>
                 ))}
                 <Link
-                    key='/profiel'
-                    to='/profiel'
-                    className='flex items-center text-white gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary'
+                  key='/profiel'
+                  to='/profiel'
+                  className='flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground text-white transition-all hover:text-primary'
                 >
                   <BsPerson className='h-auto w-8' />
                   Profiel
