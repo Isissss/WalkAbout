@@ -29,13 +29,13 @@ export default function Navbar() {
                     <NavLink
                       key={link.href}
                       to={link.href}
-                      className={(props) => {
-                        return `flex items-center gap-3 border-b-[#90B1B8] px-4 py-2 text-2xl font-normal [&:not(:last-child)]:border-b ${
-                          props.isActive
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 border-b-[#90B1B8] px-4 py-2 text-2xl font-normal [&:not(:last-child)]:border-b ${
+                          isActive
                             ? 'bg-[#E76217] text-white'
-                            : 'text-background'
-                        }`;
-                      }}
+                            : 'text-background hover:bg-[#29295a]'
+                        }`
+                      }
                     >
                       {link.iconImg && (
                         <img
@@ -51,14 +51,12 @@ export default function Navbar() {
               </div>
               <div>
                 <NavLink
-                  to='/profiel'
-                  className={(props) => {
-                    return `transition-all' flex h-20 items-center gap-3 border-t border-t-[#90B1B8] px-4 py-2 text-2xl font-normal text-background ${
-                      props.isActive
-                        ? 'bg-[#E76217] text-white'
-                        : 'text-background'
-                    }`;
-                  }}
+                  to='/profiel' 
+                  className={({ isActive }) => `transition-all' flex h-20 items-center gap-3 border-t border-t-[#90B1B8] px-4 py-2 text-2xl font-normal text-background ${ 
+                      isActive
+                      ? 'bg-[#E76217] text-white'
+                      : 'text-background hover:bg-[#29295a]'
+                  }`}
                 >
                   <BsPerson className='h-6 w-6' />
                   {/* TODO: when logged in show username */}

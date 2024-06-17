@@ -31,11 +31,12 @@ export const fetchHikingTrailById = async (
   }
 };
 
-
 // Fetch all hiking trails
 export const fetchEvents = async (): Promise<Event[]> => {
   try {
-    const res = await client.query<HikingTrail>('SELECT * FROM events ORDER BY date');
+    const res = await client.query<HikingTrail>(
+      'SELECT * FROM events ORDER BY date'
+    );
     return res.rows;
   } catch (err) {
     console.error('Unexpected error:', err);
@@ -43,13 +44,11 @@ export const fetchEvents = async (): Promise<Event[]> => {
   }
 };
 
-export const fetchEventById = async (
-    id: number
-): Promise<HikingTrail> => {
+export const fetchEventById = async (id: number): Promise<HikingTrail> => {
   try {
     const res = await client.query<HikingTrail>(
-        'SELECT * FROM events WHERE id = $1',
-        [id]
+      'SELECT * FROM events WHERE id = $1',
+      [id]
     );
     if (res.rows.length === 0) {
       throw new Error('Event not found');

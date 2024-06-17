@@ -43,27 +43,29 @@ export default function Rewards() {
                   : 'shadow-gray-500'
               )}
             >
-              <div className='col-span-1 h-32 rounded-l-xl bg-orange-500'>
+              <div className='relative col-span-1 h-full rounded-l-xl'>
                 <img
                   src={achievement.image}
                   alt={achievement.title}
-                  className='h-full w-full rounded-l-xl object-cover'
+                  className='absolute inset-0 h-full w-full rounded-l-3xl object-cover'
                 />
               </div>
-              <div className='col-span-3 mx-10'>
-                <h3 className='text-2xl font-semibold text-secondary'>
-                  {achievement.title}
-                </h3>
-                <p>{achievement.description}</p>
+              <div className='col-span-3 mx-10 p-4'>
+                <div className='mb-3'>
+                  <h3 className='text-3xl font-semibold text-secondary'>
+                    {achievement.title}
+                  </h3>
+                  <p className='text-xl'>{achievement.description}</p>
+                </div>
                 <div className='relative pt-1'>
                   <div className='mb-2 flex flex-row items-center'>
-                    <div className='mr-4 flex h-2 overflow-hidden rounded border bg-orange-200 text-xs sm:w-1/2'>
+                    <div className='mr-4 flex h-3 overflow-hidden rounded border bg-orange-200 text-lg sm:w-1/2'>
                       <div
                         style={{ width: `${achievement.progress}%` }}
                         className='flex flex-col justify-center whitespace-nowrap bg-orange-500 text-center text-white shadow-none'
                       ></div>
                     </div>
-                    <span className='inline-block rounded-full bg-secondary px-2 py-1 text-xs font-semibold uppercase text-white'>
+                    <span className='inline-block rounded-full bg-secondary px-2 py-1 text-sm font-semibold uppercase text-white'>
                       {achievement.progress}%
                     </span>
                   </div>
