@@ -16,7 +16,7 @@ export default function TransportModal({
         <Dialog.Overlay className='fixed inset-0 bg-black/60 data-[state=open]:animate-overlayShow' />
         <Dialog.Content
           onInteractOutside={(e) => e.preventDefault()}
-          className='fixed left-[50%] top-[50%] max-h-[85vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-lg bg-white p-5 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none data-[state=open]:animate-contentShow'
+          className='fixed left-[50%] top-[50%] grid max-h-[90vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] place-items-center overflow-y-auto rounded-lg bg-white p-5 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none data-[state=open]:animate-contentShow'
         >
           <Dialog.Description>
             <h2 className='mb-5 text-center text-3xl font-bold text-primary'>
