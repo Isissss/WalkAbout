@@ -6,7 +6,7 @@ export default function RewardCard({ id, image, title, points, hotspot }) {
   return (
     <>
       <div className='relative grid overflow-hidden rounded-3xl bg-white shadow-md shadow-gray-500 lg:grid-cols-2'>
-        <div className='relative h-48 w-full overflow-hidden rounded-tl-3xl sm:h-full'>
+        <div className='relative h-48 w-full overflow-hidden rounded-tl-3xl lg:h-full'>
           <img
             src={image}
             alt=''
