@@ -52,7 +52,7 @@ export default function EventDetail() {
             </div>
           </div>
           <img
-            src='/group-activity.jpg'
+            src={event.image}
             alt=''
             className='h-64 w-96 rounded-3xl object-cover'
           />
