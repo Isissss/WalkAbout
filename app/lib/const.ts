@@ -28,8 +28,8 @@ export const NAV_LINKS = [
 
 export const TRANSPORT_METHODS = [
   {
-    id: 'walking',
-    name: 'Wandelen',
+    id: 'wandelend',
+    name: 'Te voet',
     icon: '/walking.png',
   },
   {
@@ -38,12 +38,12 @@ export const TRANSPORT_METHODS = [
     icon: '/rollator.png',
   },
   {
-    id: 'scooter',
+    id: 'scootmobiel',
     name: 'Scootmobiel',
     icon: '/scootmobiel.png',
   },
   {
-    id: 'bike',
+    id: 'fiets',
     name: 'Fiets',
     icon: '/bike.png',
   },

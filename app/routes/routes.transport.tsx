@@ -15,8 +15,7 @@ export default function Routes() {
   return (
     <>
       <PageHeader title='Wandelroutes' />
-      <section>
-        <h2>Kies een vervoersmiddel</h2>
+      <section> 
         <div className='flex flex-wrap justify-center gap-4'>
           {TRANSPORT_METHODS.map((method) => (
             <div

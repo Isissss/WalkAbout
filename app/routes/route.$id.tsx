@@ -1,8 +1,7 @@
 import { useLoaderData } from '@remix-run/react';
-import { json, LoaderFunction } from '@remix-run/node';
+import { json, LoaderFunction, MetaFunction } from '@remix-run/node';
 import { HikingTrail } from '~/lib/types';
 import { fetchHikingTrailById } from '~/lib/queries';
-import PageHeader from '~/components/pageHeader';
 
 export const loader: LoaderFunction = async ({ params }) => {
   const id = parseInt(params.id || '', 10);
@@ -18,13 +17,23 @@ export const loader: LoaderFunction = async ({ params }) => {
     throw new Response(err.message, { status: 500 });
   }
 };
+export const meta: MetaFunction<typeof loader> = ({
+  data,
+}) => {
+  return [{ title: data.name}];
+};
 
 export default function RouteDetail() {
   const trail = useLoaderData<HikingTrail>();
   return (
     <>
-      <PageHeader title='Routeinformatie' />
       <section>
+        <div className='relative h-72 w-full'>
+          <img src='/dummy.png' alt='' className='h-full w-full object-cover' />
+          <div className='absolute bottom-0 left-0 flex h-12 w-fit items-center justify-center rounded-tr-[50px] bg-secondary px-16 py-8 text-4xl font-bold text-white'>
+            {trail.name}
+          </div>
+        </div>
         <div className='flex justify-between gap-y-4 max-lg:block'>
           <div>
             <h1 className='py-6 text-4xl font-bold text-primary max-md:text-lg'>
@@ -46,12 +55,7 @@ export default function RouteDetail() {
                 <p className=''>★ {trail.difficulty}</p>
               </div>
             </div>
-          </div>
-          <img
-            src='/dummy.png'
-            alt=''
-            className='h-64 w-96 rounded-3xl object-cover'
-          />
+          </div> 
         </div>
         <div>
           <h1 className='py-6 text-4xl font-bold text-primary max-md:text-lg'>

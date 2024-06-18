@@ -6,8 +6,7 @@ import { fetchEvents } from '~/lib/queries'; // Import the SQL query function
 
 export const loader: LoaderFunction = async () => {
   try {
-    const eventsData = await fetchEvents();
-    console.log('Fetched hiking trails:', eventsData);
+    const eventsData = await fetchEvents(); 
     return json(eventsData);
   } catch (err) {
     console.error('Unexpected error:', err);

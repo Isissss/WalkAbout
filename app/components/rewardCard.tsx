@@ -4,7 +4,7 @@ import CouponModal from './couponModal';
 export default function RewardCard({ id, image, title, points }) {
   return (
     <>
-      <div className='relative grid grid-cols-2 overflow-hidden rounded-3xl bg-white shadow-md shadow-gray-500'>
+      <div className='relative grid lg:grid-cols-2 overflow-hidden rounded-3xl bg-white shadow-md shadow-gray-500'>
         <div className='relative h-full w-full overflow-hidden rounded-tl-3xl'>
           <img
             src={image}
@@ -18,7 +18,7 @@ export default function RewardCard({ id, image, title, points }) {
         <div className='flex flex-col justify-between p-6'>
           <div className='flex flex-col gap-5'>
             <h3 className='text-3xl font-bold text-primary'>Voucher</h3>
-            <p className='text-2xl text-secondary'>{title}</p>
+            <p className='text-2xl text-secondary line-clamp-3 min-h-[6rem] mb-5'>{title}</p>
           </div>
           <div className='mt-4 flex justify-between'>
             <CouponModal couponId={id}>

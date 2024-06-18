@@ -1,5 +1,5 @@
 {
-  "name": "WalkAbout",
+  "name": "walkabout",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -40,7 +40,7 @@
     "react-icons": "^5.2.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
-  }, 
+  },
   "devDependencies": {
     "@remix-run/dev": "^2.9.2",
     "@types/react": "^18.2.20",
