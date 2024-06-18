@@ -57,7 +57,7 @@ export default function Routes() {
   return (
     <>
       <PageHeader title='Wandelroutes' />
-      <section className='mx-auto text-center'>
+      <section className='mx-auto w-full text-center'>
         <div className='mb-4'>
           <p className='mb-2 text-lg'>
             Deze routes zijn geschikt voor het vervoersmiddel: {label}
