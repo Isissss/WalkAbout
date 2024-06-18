@@ -13,7 +13,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
   // artificatial delay of 2 seconds
   await new Promise((resolve) => setTimeout(resolve, 2000));
-  
+
   // normally this would save the coupon to the user's account
   // but for now we just redirect to the profile page
   return redirect(`/profiel`);

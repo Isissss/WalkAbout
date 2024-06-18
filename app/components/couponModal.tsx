@@ -3,8 +3,8 @@ import { VOUCHERS } from '~/lib/const';
 import { X } from 'lucide-react';
 import { cn } from '~/lib/utils';
 import ConfettiExplosion from 'react-confetti-explosion';
-import { useState } from 'react'; 
-import { Form,  useNavigation } from '@remix-run/react';
+import { useState } from 'react';
+import { Form, useNavigation } from '@remix-run/react';
 
 export default function CouponModal({
   couponId,
@@ -18,14 +18,15 @@ export default function CouponModal({
   const navigation = useNavigation();
   if (!coupon) return null;
 
-  const isSubmitting = navigation.formData?.get('couponId') === String(couponId);
+  const isSubmitting =
+    navigation.formData?.get('couponId') === String(couponId);
 
   return (
     <Dialog.Root defaultOpen={false}>
       <Dialog.Trigger asChild>{children}</Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className='data-[state=open]:animate-overlayShow fixed inset-0 bg-black/60' />
-        <Dialog.Content className='data-[state=open]:animate-contentShow fixed left-[50%] top-[50%] max-h-[85vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-lg border-4 border-accent bg-white shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none'>
+        <Dialog.Overlay className='fixed inset-0 bg-black/60 data-[state=open]:animate-overlayShow' />
+        <Dialog.Content className='fixed left-[50%] top-[50%] max-h-[85vh] w-[90vw] max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-lg border-4 border-accent bg-white shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none data-[state=open]:animate-contentShow'>
           <Dialog.Description>
             <div className='relative h-52 w-full'>
               <img
@@ -43,7 +44,7 @@ export default function CouponModal({
             </div>
             <div className='flex flex-col justify-between p-6'>
               <h3 className='text-3xl font-bold text-primary'>Voucher</h3>
-              <p className='mb-4 text-secondary text-lg'>{coupon.title}</p>
+              <p className='mb-4 text-lg text-secondary'>{coupon.title}</p>
               <p className='mb-3 text-lg'>{coupon.description}</p>
               <p className='mt-4 text-xl font-bold text-primary'>
                 Te gebruiken op de volgende locaties:

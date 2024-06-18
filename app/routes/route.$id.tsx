@@ -17,10 +17,8 @@ export const loader: LoaderFunction = async ({ params }) => {
     throw new Response(err.message, { status: 500 });
   }
 };
-export const meta: MetaFunction<typeof loader> = ({
-  data,
-}) => {
-  return [{ title: data.name}];
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  return [{ title: data.name }];
 };
 
 export default function RouteDetail() {
@@ -55,7 +53,7 @@ export default function RouteDetail() {
                 <p className=''>★ {trail.difficulty}</p>
               </div>
             </div>
-          </div> 
+          </div>
         </div>
         <div>
           <h1 className='py-6 text-4xl font-bold text-primary max-md:text-lg'>

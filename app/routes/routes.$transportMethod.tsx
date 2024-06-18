@@ -28,10 +28,10 @@ export const action = async ({ request }) => {
 
 export const loader: LoaderFunction = async ({ request }) => {
   const cookieHeader = request.headers.get('Cookie');
-  const transportMethod = await transportMethodCookie.parse(cookieHeader); 
+  const transportMethod = await transportMethodCookie.parse(cookieHeader);
 
   // Fetch hiking trails
-  try { 
+  try {
     const hikingTrails = await fetchHikingTrails();
     return json(
       { hikingTrails, transportMethod },
