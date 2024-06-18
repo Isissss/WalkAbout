@@ -1,4 +1,4 @@
-import PageHeader from '~/components/pageHeader'; 
+import PageHeader from '~/components/pageHeader';
 
 export default function Index() {
   return (
@@ -7,7 +7,7 @@ export default function Index() {
       <section className='grid w-full gap-6 lg:grid-cols-2'>
         <div className='mx-auto flex flex-col gap-y-7 sm:w-4/5'>
           <h2 className='mb-3 text-3xl font-bold text-secondary'>
-            Wat is WalkAbout? 
+            Wat is WalkAbout?
           </h2>
           <p className='text-xl'>
             WalkAbout is een platform waarmee jij verschillende wandelroutes en
@@ -24,9 +24,7 @@ export default function Index() {
             opgestuurt krijgt, en je kan deze gebruiken voor verschillende
             beloningen.
           </p>
-          <p className='text-xl'>
-            Veel loopplezier! Team WalkAbout
-          </p>
+          <p className='text-xl'>Veel loopplezier! Team WalkAbout</p>
         </div>
         <div className='mx-auto'>
           <img
