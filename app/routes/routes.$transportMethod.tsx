@@ -1,4 +1,9 @@
-import { redirect, useLoaderData } from '@remix-run/react';
+import {
+  redirect,
+  useLoaderData,
+  useLocation,
+  useNavigate,
+} from '@remix-run/react';
 import { json, LoaderFunction } from '@remix-run/node';
 import { HikingTrail } from '~/lib/types'; // Import the type definition
 import { fetchHikingTrails } from '~/lib/queries'; // Import the SQL query function
@@ -27,19 +32,15 @@ export const action = async ({ request }) => {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const cookieHeader = request.headers.get('Cookie');
-  const transportMethod = await transportMethodCookie.parse(cookieHeader);
+  const loc = new URL(request.url).pathname;
+  const transportId = loc.split('/').pop();
+
+  const hasBikeSelected = transportId === 'fiets';
 
   // Fetch hiking trails
   try {
-    const hikingTrails = await fetchHikingTrails();
-    return json(
-      { hikingTrails, transportMethod },
-      {
-        // Cache the response for 1 hour
-        headers: { 'Cache-Control': 'max-age=3600, public' },
-      }
-    );
+    const hikingTrails = await fetchHikingTrails({ bikeOnly: hasBikeSelected });
+    return json({ hikingTrails });
   } catch (err) {
     console.error('Unexpected error:', err);
     throw new Response('Failed to load hiking trails', { status: 500 });
@@ -47,10 +48,11 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export default function Routes() {
-  const { hikingTrails, transportMethod } = useLoaderData<typeof loader>();
-  const label = TRANSPORT_METHODS.find(
-    (method) => method.id === transportMethod
-  )?.name;
+  const location = useLocation();
+  const id = location.pathname.split('/').pop();
+  const { hikingTrails } = useLoaderData<typeof loader>();
+
+  const label = TRANSPORT_METHODS.find((method) => method.id === id)?.name;
 
   return (
     <>
@@ -66,7 +68,7 @@ export default function Routes() {
             </button>
           </TransportModal>
         </div>
-        <div className='flex flex-col items-center justify-center gap-y-4'>
+        <div className='flex w-full max-w-4xl flex-col items-center justify-center gap-y-4'>
           {hikingTrails?.map((trail: HikingTrail, index: number) => (
             <RouteCard key={index} {...trail} />
           ))}

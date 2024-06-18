@@ -89,7 +89,7 @@ export default function events() {
               <div className='h-full w-auto max-w-xs overflow-hidden max-md:hidden lg:col-span-1'>
                 <div className='relative inline-block h-full w-auto'>
                   <img
-                    src='/group-activity.jpg'
+                    src={event.image}
                     alt=''
                     className='block h-full w-auto'
                   />

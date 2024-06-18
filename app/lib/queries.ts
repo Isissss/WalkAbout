@@ -2,9 +2,14 @@ import client from '~/lib/postgres-client';
 import { HikingTrail } from './types';
 
 // Fetch all hiking trails
-export const fetchHikingTrails = async (): Promise<HikingTrail[]> => {
+export const fetchHikingTrails = async ({
+  bikeOnly = false,
+}): Promise<HikingTrail[]> => {
   try {
-    const res = await client.query<HikingTrail>('SELECT * FROM hiking_trails');
+    const res = await client.query<HikingTrail>(
+      'SELECT * FROM hiking_trails WHERE bike_only = $1',
+      [bikeOnly]
+    );
     return res.rows;
   } catch (err) {
     console.error('Unexpected error:', err);
