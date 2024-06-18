@@ -15,7 +15,7 @@ export const action = async ({ request }) => {
   const transportMethod = formData.get('transportMethod');
 
   if (typeof transportMethod !== 'string') {
-    return;
+    return null;
   }
 
   // Set the cookie with the transport method and redirect
@@ -33,6 +33,8 @@ export const loader = async ({ request }) => {
   if (cookie) {
     return redirect(`/routes/${cookie}`);
   }
+
+  return null;
 };
 
 export default function Routes() {
