@@ -1,4 +1,5 @@
 import PageHeader from '~/components/pageHeader';
+import introImage from '/intro.png';
 
 export default function Index() {
   return (
@@ -28,7 +29,7 @@ export default function Index() {
         </div>
         <div className='mx-auto'>
           <img
-            src='/intro.png'
+            src={introImage}
             className='aspect-square overflow-hidden rounded-xl object-cover'
             alt=''
           />

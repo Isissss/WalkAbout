@@ -3,6 +3,7 @@ import type { LoaderFunctionArgs } from '@remix-run/node';
 import { Form } from '@remix-run/react';
 import { createSupabaseServerClient } from '~/supabase.server';
 import PageHeader from '~/components/pageHeader';
+import dummy from '/dummy.png';
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { supabaseClient } = createSupabaseServerClient(request);
@@ -53,7 +54,7 @@ const Profiel = () => {
               >
                 <div className='col-span-1 overflow-hidden'>
                   <img
-                    src='/dummy.png'
+                    src={dummy}
                     alt=''
                     className='h-full w-full rounded-l-3xl object-cover'
                   />
@@ -80,7 +81,7 @@ const Profiel = () => {
               >
                 <div className='col-span-1 overflow-hidden'>
                   <img
-                    src='/dummy.png'
+                    src={dummy}
                     alt=''
                     className='h-full w-full rounded-l-3xl object-cover'
                   />
