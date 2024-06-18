@@ -42,7 +42,7 @@ export default function Rewards() {
             <div
               key={index}
               className={clsx(
-                'mx-auto grid max-w-4xl items-center rounded-3xl border bg-white shadow-md md:grid-cols-4',
+                'mx-auto grid w-full max-w-4xl items-center rounded-3xl border bg-white shadow-md md:grid-cols-4',
                 achievement.progress === 100
                   ? 'border-none shadow-accent'
                   : 'shadow-gray-500'
