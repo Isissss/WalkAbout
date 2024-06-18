@@ -17,7 +17,7 @@ export default function RouteCard({
   distance,
   start_location,
   difficulty,
-  image
+  image,
 }: RouteCardProps) {
   return (
     <div className='relative grid min-w-full rounded-3xl border text-black no-underline shadow-md shadow-gray-500 lg:grid-cols-4'>
