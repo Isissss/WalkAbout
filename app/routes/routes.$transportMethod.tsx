@@ -68,7 +68,7 @@ export default function Routes() {
             </button>
           </TransportModal>
         </div>
-        <div className='flex w-full max-w-4xl flex-col items-center justify-center gap-y-4'>
+        <div className='mx-auto flex w-full max-w-4xl flex-col items-center justify-center gap-y-4'>
           {hikingTrails?.map((trail: HikingTrail, index: number) => (
             <RouteCard key={index} {...trail} />
           ))}
