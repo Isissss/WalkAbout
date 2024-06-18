@@ -1,4 +1,5 @@
 import { Link } from '@remix-run/react';
+import dummy from '/dummy.png';
 
 export type RouteCardProps = {
   id: number;
@@ -21,7 +22,7 @@ export default function RouteCard({
     <div className='relative grid w-full max-w-4xl rounded-3xl border text-black no-underline shadow-md shadow-gray-500 lg:grid-cols-4'>
       <div className='overflow-hidden lg:col-span-1'>
         <img
-          src='/dummy.png'
+          src={dummy}
           alt=''
           className='h-32 w-full rounded-t-3xl object-cover lg:h-full lg:rounded-l-3xl'
         />
