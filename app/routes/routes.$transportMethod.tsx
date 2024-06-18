@@ -32,12 +32,14 @@ export const action = async ({ request }) => {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const cookieHeader = request.headers.get('Cookie');
-  const transportMethod = await transportMethodCookie.parse(cookieHeader);
+  const loc = new URL(request.url).pathname;
+  const transportId = loc.split('/').pop();
+
+  const hasBikeSelected = transportId === 'fiets';
 
   // Fetch hiking trails
   try {
-    const hikingTrails = await fetchHikingTrails();
+    const hikingTrails = await fetchHikingTrails({ bikeOnly: hasBikeSelected });
     return json({ hikingTrails });
   } catch (err) {
     console.error('Unexpected error:', err);
@@ -46,9 +48,9 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export default function Routes() {
-  const { hikingTrails } = useLoaderData<typeof loader>();
   const location = useLocation();
   const id = location.pathname.split('/').pop();
+  const { hikingTrails } = useLoaderData<typeof loader>();
 
   const label = TRANSPORT_METHODS.find((method) => method.id === id)?.name;
 
