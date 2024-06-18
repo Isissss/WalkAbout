@@ -1,24 +1,16 @@
-import type { MetaFunction } from '@remix-run/node';
-import PageHeader from '~/components/pageHeader';
-
-export const meta: MetaFunction = () => {
-  return [
-    { title: 'Walkabout' },
-    { name: 'description', content: 'Welcome to Remix!' },
-  ];
-};
+import PageHeader from '~/components/pageHeader'; 
 
 export default function Index() {
   return (
     <>
-      <PageHeader title='Welkom bij WalkAbout!' />
+      <PageHeader title='Welkom bij WalkAbout!' isMain />
       <section className='grid w-full gap-6 lg:grid-cols-2'>
         <div className='mx-auto flex flex-col gap-y-7 sm:w-4/5'>
           <h2 className='mb-3 text-3xl font-bold text-secondary'>
-            Wat is WalkAbout?
+            Wat is WalkAbout? 
           </h2>
           <p className='text-xl'>
-            BinGO Walk is een platform waarmee jij verschillende wandelroutes en
+            WalkAbout is een platform waarmee jij verschillende wandelroutes en
             ook diverse sociale activiteiten (evenementen) kan vinden die te
             maken hebben met beweging.
           </p>
@@ -32,12 +24,15 @@ export default function Index() {
             opgestuurt krijgt, en je kan deze gebruiken voor verschillende
             beloningen.
           </p>
+          <p className='text-xl'>
+            Veel loopplezier! Team WalkAbout
+          </p>
         </div>
         <div className='mx-auto'>
           <img
             src='/intro.png'
             className='aspect-square overflow-hidden rounded-xl object-cover'
-            alt='BinGO Walk'
+            alt=''
           />
         </div>
       </section>

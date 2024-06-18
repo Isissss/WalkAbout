@@ -1,32 +1,41 @@
-import { useLoaderData } from '@remix-run/react';
-import { json, LoaderFunction } from '@remix-run/node';
-import { HikingTrail } from '~/lib/types'; // Import the type definition
-import { fetchHikingTrails } from '~/lib/queries'; // Import the SQL query function
+import { Form, json, redirect, useLoaderData, useNavigate } from '@remix-run/react';
 import PageHeader from '~/components/pageHeader';
-import RouteCard from '~/components/routeCard';
+import TransportForm from '~/components/transportForm';
+import { TRANSPORT_METHODS } from '~/lib/const'; 
+import { transportMethodCookie } from '~/lib/cookies';
 
-export const loader: LoaderFunction = async () => {
-  try {
-    const hikingTrails = await fetchHikingTrails();
-    console.log('Fetched hiking trails:', hikingTrails);
-    return json(hikingTrails);
-  } catch (err) {
-    console.error('Unexpected error:', err);
-    throw new Response('Failed to load hiking trails', { status: 500 });
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const transportMethod = formData.get('transportMethod'); 
+
+  if (typeof transportMethod !== 'string') {
+   return }
+
+  // Set the cookie with the transport method and redirect
+  return redirect(`/routes/${transportMethod}`, {
+    headers: {
+      'Set-Cookie': await transportMethodCookie.serialize(transportMethod),
+    },
+  });
+};
+
+export const loader = async ({ request }) => {
+  const cookieHeader = request.headers.get("Cookie");
+  const cookie = await transportMethodCookie.parse(cookieHeader) 
+
+  if (cookie) {
+    return redirect(`/routes/${cookie}`);
   }
 };
 
-export default function Routes() {
-  const trails = useLoaderData<HikingTrail[]>();
+export default function Routes() { 
 
   return (
     <>
-      <PageHeader title='Wandelroutes' />
-      <section>
-        <div className='flex flex-col items-center justify-center gap-y-4'>
-          {trails.map((trail, index) => (
-            <RouteCard key={index} {...trail} />
-          ))}
+      <PageHeader title='Hoe gaat u bewegen?' />
+      <section> 
+        <div className='flex flex-wrap justify-center gap-4'>
+           <TransportForm />
         </div>
       </section>
     </>

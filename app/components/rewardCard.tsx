@@ -1,25 +1,31 @@
 import { Link } from '@remix-run/react';
+import CouponModal from './couponModal';
 
-export default function RewardCard({ image, description, points }) {
+export default function RewardCard({ id, image, title, points }) {
   return (
     <>
-      <div className='relative grid grid-cols-2 overflow-hidden rounded-3xl bg-white shadow-md shadow-gray-500'>
-        <div className='absolute bottom-0 left-0 flex h-8 w-24 items-center justify-center rounded-tr-3xl bg-secondary px-2 py-1 text-sm text-white'>
-          {points} punten
-        </div>
-        <img src={image} alt='' className='h-full w-full object-cover' />
-        <div className='flex flex-col justify-between p-4'>
-          <div className='flex flex-col gap-2'>
-            <h3 className='text-xl font-bold text-primary'>Voucher</h3>
-            <p className='text-secondary'>{description}</p>
+      <div className='relative grid lg:grid-cols-2 overflow-hidden rounded-3xl bg-white shadow-md shadow-gray-500'>
+        <div className='relative h-full w-full overflow-hidden rounded-tl-3xl'>
+          <img
+            src={image}
+            alt=''
+            className='absolute inset-0 h-full w-full object-cover'
+          />
+          <div className='absolute bottom-0 left-0 flex h-8 w-fit items-center justify-center rounded-tr-3xl bg-secondary px-8 py-5 text-2xl text-white'>
+            {points} punten
           </div>
-          <div className='mt-4 flex items-end justify-between'>
-            <Link
-              to='/'
-              className='flex items-center text-base font-semibold text-orange-500'
-            >
-              Bekijk <span className='ml-1 text-base'>→</span>
-            </Link>
+        </div>
+        <div className='flex flex-col justify-between p-6'>
+          <div className='flex flex-col gap-5'>
+            <h3 className='text-3xl font-bold text-primary'>Voucher</h3>
+            <p className='text-2xl text-secondary line-clamp-3 min-h-[6rem] mb-5'>{title}</p>
+          </div>
+          <div className='mt-4 flex justify-between'>
+            <CouponModal couponId={id}>
+              <button className='flex items-center text-2xl font-semibold text-orange-500'>
+                Bekijk <span className='ml-1 text-2xl'>→</span>
+              </button>
+            </CouponModal>
           </div>
         </div>
       </div>

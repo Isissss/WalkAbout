@@ -29,7 +29,7 @@ export default function RouteCard({
       <div className='flex flex-col items-start space-y-3 p-5 lg:col-span-3'>
         <Link
           className='after:absolute after:inset-0 after:h-full after:w-full'
-          to={`/routes/${id}`}
+          to={`/route/${id}`}
         >
           <h2 className='text-3x col-span-3 text-3xl text-secondary'>{name}</h2>{' '}
         </Link>
@@ -45,7 +45,7 @@ export default function RouteCard({
             </tr>
             <tr>
               <th>Moeilijkheid:</th>
-              <td>{difficulty}</td>
+              <td>★ {difficulty}</td>
             </tr>
           </tbody>
         </table>

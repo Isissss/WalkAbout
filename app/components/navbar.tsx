@@ -29,13 +29,13 @@ export default function Navbar() {
                     <NavLink
                       key={link.href}
                       to={link.href}
-                      className={(props) => {
-                        return `flex items-center gap-3 border-b-[#90B1B8] px-4 py-2 text-2xl font-normal [&:not(:last-child)]:border-b ${
-                          props.isActive
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 border-b-[#90B1B8] px-4 py-2 text-2xl font-normal [&:not(:last-child)]:border-b ${
+                          isActive
                             ? 'bg-[#E76217] text-white'
-                            : 'text-background'
-                        }`;
-                      }}
+                            : 'text-background hover:bg-[#29295a]'
+                        }`
+                      }
                     >
                       {link.iconImg && (
                         <img
@@ -52,13 +52,13 @@ export default function Navbar() {
               <div>
                 <NavLink
                   to='/profiel'
-                  className={(props) => {
-                    return `transition-all' flex h-20 items-center gap-3 border-t border-t-[#90B1B8] px-4 py-2 text-2xl font-normal text-background ${
-                      props.isActive
+                  className={({ isActive }) =>
+                    `transition-all' flex h-20 items-center gap-3 border-t border-t-[#90B1B8] px-4 py-2 text-2xl font-normal text-background ${
+                      isActive
                         ? 'bg-[#E76217] text-white'
-                        : 'text-background'
-                    }`;
-                  }}
+                        : 'text-background hover:bg-[#29295a]'
+                    }`
+                  }
                 >
                   <BsPerson className='h-6 w-6' />
                   {/* TODO: when logged in show username */}
@@ -86,22 +86,39 @@ export default function Navbar() {
             <SheetContent side='left' className='flex flex-col bg-[#373776]'>
               <nav className='grid gap-2 text-lg font-medium'>
                 <Link
-                  to='#'
+                  to='/'
                   className='flex items-center gap-2 text-lg font-semibold'
                 >
-                  <Package2 className='h-6 w-6' />
-                  <span className='sr-only'>Acme Inc</span>
+                  <img
+                    src='/favicon.ico'
+                    alt=''
+                    className='aspect-square h-auto w-8'
+                  />
                 </Link>
                 {NAV_LINKS.map((link) => (
                   <Link
                     key={link.href}
                     to={link.href}
-                    className='flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary'
+                    className='flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground text-white transition-all hover:text-primary'
                   >
-                    {link.icon || ''}
+                    {link.iconImg && (
+                      <img
+                        src={'/icons' + link.iconImg}
+                        alt=''
+                        className='aspect-square h-auto w-8'
+                      />
+                    )}
                     {link.title}
                   </Link>
                 ))}
+                <Link
+                  key='/profiel'
+                  to='/profiel'
+                  className='flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground text-white transition-all hover:text-primary'
+                >
+                  <BsPerson className='h-auto w-8' />
+                  Profiel
+                </Link>
               </nav>
             </SheetContent>
           </Sheet>
