@@ -8,7 +8,8 @@ WalkAbout is build using Remix and uses Supabase for the database.
 
 ## Technologies
 
-The most important technologies used for this project: 
+The most important technologies used for this project:
+
 - [Remix](https://remix.run/docs/en/main) React framework
 - [TailwindCSS](https://tailwindcss.com/docs) for styling
 - [Supabase](https://supabase.com/) Postgres database and authentication
@@ -29,7 +30,7 @@ Run the Vite dev server:
 
 ```shellscript
 npm run dev
-``` 
+```
 
 ## Deployment
 
@@ -39,9 +40,8 @@ To build the application locally, run:
 npm run build
 ```
 
-To run it, run: 
+To run it, run:
 
 ```shellscript
 npm run start
-``` 
- 
+```
