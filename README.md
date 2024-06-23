@@ -18,9 +18,9 @@ The most important technologies used for this project:
 
 ## What happens where? 
 
-The most important technologies used for this project:
+A brief outline of the structure of the project:
 ```
-medialab2/
+root/
 ├── .husky
 ├── app/
 │   ├── components/
