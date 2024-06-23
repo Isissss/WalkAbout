@@ -16,6 +16,36 @@ The most important technologies used for this project:
 - [Prettier] For code formatting
 - [Husky](https://typicode.github.io/husky/) For pre commit hooks, to ensure the entire codebase uses the same code styling
 
+## What happens where? 
+
+The most important technologies used for this project:
+```
+medialab2/
+├── .husky
+├── app/
+│   ├── components/
+│   ├── routes/
+│   ├── root.tsx
+│   ├── tailwind.css 
+│   ├── lib/
+│   │   ├── queries.ts
+│   │   ├── postgres-client.ts
+```
+
+`.husky` > Pre-commit scripts to run all the style linters
+
+`app/` -> main application files
+
+`app/routes` -> all the route files for the application
+
+`app/root.tsx` -> the start of the application  
+
+`app/tailwind.css` -> the main CSS file for normal CSS and tailwind declarations  
+
+`app/components` -> all UI components for the app
+
+`app/lib/queries.ts` -> All queries for the application, abstracting the data access layer away for clear separation of concerns. 
+
 ## Features
 
 - Viewing hiking trails
